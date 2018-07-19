@@ -1,0 +1,64 @@
+{
+  "name": "sfdx-cicd-prep",
+  "version": "0.0.1",
+  "description": "Contains files needed to perform the CICD process. App.json is used for the review app only",
+  "repository": "https://github.com/StefanBotman/cicd-testing-prep",
+  "author": "Stefan Botman",
+  "license": "ALv2",
+  "bugs": {
+    "url": "https://github.com/StefanBotman/cicd-testing-prep/issues"
+  },
+  "homepage":
+    "https://github.com/StefanBotman/cicd-testing-prep#readme",
+  "dependencies": {},
+  "devDependencies": {},
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/salesforce-cli-buildpack#v3"
+    },
+    {
+      "url": "https://github.com/heroku/salesforce-buildpack#v1"
+    },
+	{
+		"url": "https://github.com/heroku/heroku-buildpack-google-chrome"
+	},
+	{
+		"url": "https://github.com/heroku/heroku-buildpack-chromedriver"
+	},
+	{
+		"url": "heroku/java"
+	},
+	{
+		"url": "https://github.com/StefanBotman/sf-cucumber-testing"
+	}
+  ],
+  "env": {
+    "SFDX_DEV_HUB_AUTH_URL": {
+      "required": true
+    },
+    "SFDX_BUILDPACK_DEBUG": {
+      "required": true
+    },
+    "HEROKU_APP_NAME" : {
+      "required": true
+    }
+  },
+  "environments": {
+    "test": {
+      "scripts": {
+        "test-setup":
+          "./vendor/sfdx/release.sh ci-$HEROKU_TEST_RUN_COMMIT_VERSION && ./bin/test-setup.sh",
+        "test": "./bin/test.sh"
+      },
+      "formation": {
+        "test": {
+          "quantity": 1,
+          "size": "standard-1x"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "pr-predestroy": "./bin/ra-org-delete.sh"
+  }
+}
