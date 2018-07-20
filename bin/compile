@@ -2,6 +2,9 @@ pwd
 ls -ltr
 echo "builddir: $1"
 
+echo "src: "
+ls -ltr src
+
 cp src/app.json $1
 cp src/.salesforcedx.yml $1
 
