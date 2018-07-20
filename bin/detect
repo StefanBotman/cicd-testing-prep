@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ -d $1/.sfdx ]; then
+  echo "DX project found"
+  exit 0
+else
+  exit 1
+fi
