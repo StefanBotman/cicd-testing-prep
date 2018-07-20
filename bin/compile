@@ -7,5 +7,6 @@ ls -altr src
 
 cp src/app.json $1
 cp src/.salesforcedx.yml $1
+cp src/.salesforcedx.yml $1/sfdx.yml
 
 ls -altr $1
