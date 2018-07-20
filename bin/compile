@@ -1,2 +1,5 @@
 pwd
 ls -ltr
+echo "builddir: $1"
+
+cp app.json $1
