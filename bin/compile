@@ -3,3 +3,5 @@ ls -ltr
 echo "builddir: $1"
 
 cp app.json $1
+
+ls -ltr $1
