@@ -6,6 +6,6 @@ echo "src: "
 ls -ltr src
 
 cp src/app.json $1
-cp src/.salesforcedx.yml $1
+cp src/salesforcedx.yml $1/.salesforcedx.yml
 
 ls -ltr $1
