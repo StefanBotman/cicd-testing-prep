@@ -13,11 +13,12 @@
   "dependencies": {},
   "devDependencies": {},
   "buildpacks": [
+	{ "url": "https://github.com/StefanBotman/cicd-testing-prep"},
     {
       "url": "https://github.com/heroku/salesforce-cli-buildpack#v3"
     },
     {
-      "url": "https://github.com/heroku/salesforce-buildpack#v1"
+      "url": "https://github.com/heroku/salesforce-buildpack#v3"
     },
 	{
 		"url": "https://github.com/heroku/heroku-buildpack-google-chrome"

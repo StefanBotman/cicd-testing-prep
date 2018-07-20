@@ -3,9 +3,9 @@ ls -ltr
 echo "builddir: $1"
 
 echo "src: "
-ls -ltr src
+ls -altr src
 
 cp src/app.json $1
-cp src/salesforcedx.yml $1/.salesforcedx.yml
+cp src/.salesforcedx.yml $1
 
-ls -ltr $1
+ls -altr $1
