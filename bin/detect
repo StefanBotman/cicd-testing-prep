@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -d $1/.sfdx ]; then
+if [ -d "$1/.sfdx" ]; then
   echo "DX project found"
   exit 0
 else
