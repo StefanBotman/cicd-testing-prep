@@ -15,5 +15,5 @@ echo "Retrieving tests:"
 git clone https://github.com/StefanBotman/sf-cucumber-testing
 
 cd sf-cucumber-testing
-cp * $1
+cp -r ./* $1
 ls -altr
